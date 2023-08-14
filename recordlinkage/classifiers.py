@@ -504,7 +504,8 @@ class SVMClassifier(SKLearnAdapter, Classifier):
     def __init__(self, *args, **kwargs):
         super().__init__()
 
-        self.kernel = svm.LinearSVC(*args, **kwargs)
+        # self.kernel = svm.LinearSVC(*args, **kwargs)
+        self.kernel = svm.SVC(*args, **kwargs)
 
     def prob(self, *args, **kwargs):
         raise AttributeError(
